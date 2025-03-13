@@ -1,22 +1,23 @@
+git
+void bubbleSortArray()
+{
+    int pass = 1; //step 1
 
-void input(){       //procedur untuk input
-    while (true) {
-        cout << "Masukkan banyaknya elemen pada array : ";  //output ke layar
-        cin >> n;       //input dari pengguna
-        if (n <= 20)    //jika n kurang dari atau sama dengan 20
-            break;      //keluar dari loop
-        else {          //jika n lebih dari 20
-            cout << "\nArray dapat mempunyai maksimal 20 elemen. \n";   //output ke layar 
+    do 
+    {
+        for (int j = 0; j <= n-1-pass; j++)
+        {  //step 2
+
+            if (arr[j] > arr[j+1]) //step 3
+            {  
+                int temp;
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
         }
 
-    }
-    cout << endl;
-    cout << "=====================" << endl;
-    cout << "Masukkan elemen array" << endl;
-    cout << "=====================" << endl;
+        pass = pass + 1; //step 4
 
-    for (int i = 0; i <n; i++){
-        cout << "Data ke-" << (i+1) << ";";
-        cin >> arr[i];
-    }
+    } while (pass <= n - 1); //step 5
 }
